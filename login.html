@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>Assignment 3</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function validateForm() { // Synartisi gia elegxo tou form prin tin ypovolh
+            var user = document.getElementById("user").value; // Pairnei tin timi tou pediou tou username
+            var passwd = document.getElementById("passwd").value; // Pairnei tin timi tou pediou tou password
+            if (user == "" || passwd == "") { // Elegxei an to username i to password einai adeio
+                alert("Username and Password must be filled out"); // Emfanizei minima alert an kapoio pedio einai adeio
+                return false; // Epistrefei false gia na akyrwthei i ypovolh tou form
+            }
+            return true; // Epistrefei true an ola ta pedia einai symplirwmena
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="process_login.php" id="LoginForm" onsubmit="return validateForm()">  <!-- Form gia to login -->
+        <h1>Login</h1>  <!-- Titlos -->
+        <label>User Name</label><br>  <!-- Label gia to username -->
+        <input type="text" name="user" id="user"><br><br>  <!-- Pedio gia tin eisagwgi tou username -->
+        <label>Password</label><br>  <!-- Label gia to password -->
+        <input type="password" name="password" id="passwd"><br><br>  <!-- Pedio gia tin eisagwgi tou password -->
+        <label>Database</label><br>  <!-- Label gia tin epilogi tis vasis dedomenwn -->
+        <select name="choice">  <!-- Dropdown lista gia tin epilogi tis vasis dedomenwn -->
+            <option>web_development</option>
+            <option>web_development_login</option>
+        </select><br><br><br>
+        <input type="submit" name="submit" value="Login">  <!-- Koumpi ypovolhs -->
+    </form>
+</body>
+</html>
+
